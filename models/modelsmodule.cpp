@@ -20,13 +20,13 @@
  *
  */
 
-/* 
+/*
     This file is part of NEST.
 
     modelsmodule.cpp -- sets up the modeldict with all models included
-    with the NEST distribution. 
+    with the NEST distribution.
 
-    Author(s): 
+    Author(s):
     Marc-Oliver Gewaltig
     R"udiger Kupper
     Hans Ekkehard Plesser
@@ -71,6 +71,7 @@
 #include "ginzburg_neuron.h"
 #include "mcculloch_pitts_neuron.h"
 #include "izhikevich.h"
+#include "simple.h"
 
 // Stimulation devices
 #include "ac_generator.h"
@@ -180,6 +181,7 @@ namespace nest
     register_model<ginzburg_neuron>(net_,        "ginzburg_neuron");
     register_model<mcculloch_pitts_neuron>(net_, "mcculloch_pitts_neuron");
     register_model<izhikevich>(net_,             "izhikevich");
+    register_model<simple>(net_,             "simple");
 
     register_model<spike_detector>(net_,       "spike_detector");
     register_model<spin_detector>(net_,       "spin_detector");
@@ -191,7 +193,7 @@ namespace nest
     // Create voltmeter as a multimeter pre-configured to record V_m.
     Dictionary vmdict;
     ArrayDatum ad;
-    ad.push_back(LiteralDatum(names::V_m.toString())); 
+    ad.push_back(LiteralDatum(names::V_m.toString()));
     vmdict[names::record_from] = ad;
     register_preconf_model<Multimeter>(net_, "voltmeter", vmdict);
 
@@ -215,7 +217,7 @@ namespace nest
     register_model<aeif_cond_alpha_RK5>(net_, "aeif_cond_alpha_RK5");
     register_model<aeif_cond_alpha_multisynapse>(net_, "aeif_cond_alpha_multisynapse");
 
-#ifdef HAVE_MUSIC 
+#ifdef HAVE_MUSIC
     //// proxies for inter-application communication using MUSIC
     register_model<music_event_in_proxy>(net_, "music_event_in_proxy");
     register_model<music_event_out_proxy>(net_, "music_event_out_proxy");
@@ -236,9 +238,9 @@ namespace nest
 
    SeeAlso: synapsedict, static_synapse
 */
-    register_connection_model < StaticConnection<TargetIdentifierPtrRport> > (net_,    "static_synapse");  
+    register_connection_model < StaticConnection<TargetIdentifierPtrRport> > (net_,    "static_synapse");
     register_connection_model < StaticConnection<TargetIdentifierIndex> > (net_,    "static_synapse_hpc");
-  
+
 
 /* BeginDocumentation
    Name: static_synapse_hom_w_hpc - Variant of static_synapse_hom_w with low memory consumption.
@@ -275,7 +277,7 @@ namespace nest
 /* BeginDocumentation
    Name: stdp_synapse_hom_hpc - Variant of quantal_stp_synapse with low memory consumption.
    SeeAlso: synapsedict, stdp_synapse_hom, static_synapse_hpc
-*/    
+*/
     register_connection_model < STDPConnectionHom<TargetIdentifierPtrRport> > (net_, "stdp_synapse_hom");
     register_connection_model < STDPConnectionHom<TargetIdentifierIndex> > (net_, "stdp_synapse_hom_hpc");
 
@@ -317,7 +319,7 @@ namespace nest
    SeeAlso: synapsedict, ht_synapse, static_synapse_hpc
 */
     register_connection_model < HTConnection<TargetIdentifierPtrRport> > (net_,    "ht_synapse");
-    register_connection_model < HTConnection<TargetIdentifierIndex> > (net_,    "ht_synapse_hpc"); 
+    register_connection_model < HTConnection<TargetIdentifierIndex> > (net_,    "ht_synapse_hpc");
 
 
 /* BeginDocumentation
