@@ -1,10 +1,10 @@
 import subprocess, sys
 
-def run_doxygen(folder):
-    """Run the doxygen make command in the designated folder"""
+def run_doxygen():
+    """Run the doxygen make command in the designated"""
 
     try:
-        retcode = subprocess.call("cd %s; make doc" % folder, shell=True)
+        retcode = subprocess.call("make doc", shell=True)
         if retcode < 0:
             sys.stderr.write("doxygen terminated by signal %s" % (-retcode))
     except OSError as e:
@@ -17,11 +17,11 @@ def generate_doxygen_xml(app):
     read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 
     if read_the_docs_build:
-        run_doxygen("./doc/")
+        sys.stderr.write("Running doxygen build for readthedocs")
+        run_doxygen()
 
 
 def setup(app):
-
     # Add hook for building doxygen xml when needed
     app.connect("builder-inited", generate_doxygen_xml)
 
