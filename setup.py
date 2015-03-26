@@ -4,6 +4,7 @@ def run_doxygen():
     """Run the doxygen make command in the designated"""
 
     try:
+        retcode = subprocess.call("./configure --prefix=./local", shell=True)
         retcode = subprocess.call("make doc", shell=True)
         if retcode < 0:
             sys.stderr.write("doxygen terminated by signal %s" % (-retcode))
