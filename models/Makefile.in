@@ -130,6 +130,7 @@ am_libmodelsmodule_la_OBJECTS = libmodelsmodule_la-ac_generator.lo \
 	libmodelsmodule_la-iaf_psc_exp.lo \
 	libmodelsmodule_la-iaf_tum_2000.lo \
 	libmodelsmodule_la-izhikevich.lo \
+  libmodelsmodule_la-simple.lo \
 	libmodelsmodule_la-mat2_psc_exp.lo \
 	libmodelsmodule_la-mcculloch_pitts_neuron.lo \
 	libmodelsmodule_la-mip_generator.lo \
@@ -161,7 +162,7 @@ libmodelsmodule_la_OBJECTS = $(am_libmodelsmodule_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
-am__v_lt_1 = 
+am__v_lt_1 =
 libmodelsmodule_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
@@ -173,11 +174,11 @@ am__v_P_1 = :
 AM_V_GEN = $(am__v_GEN_@AM_V@)
 am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
 am__v_GEN_0 = @echo "  GEN     " $@;
-am__v_GEN_1 = 
+am__v_GEN_1 =
 AM_V_at = $(am__v_at_@AM_V@)
 am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
-am__v_at_1 = 
+am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/libnestutil
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -191,7 +192,7 @@ LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 AM_V_CXX = $(am__v_CXX_@AM_V@)
 am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
 am__v_CXX_0 = @echo "  CXX     " $@;
-am__v_CXX_1 = 
+am__v_CXX_1 =
 CXXLD = $(CXX)
 CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
@@ -199,7 +200,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
-am__v_CXXLD_1 = 
+am__v_CXXLD_1 =
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
@@ -209,7 +210,7 @@ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CC = $(am__v_CC_@AM_V@)
 am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
 am__v_CC_0 = @echo "  CC      " $@;
-am__v_CC_1 = 
+am__v_CC_1 =
 CCLD = $(CC)
 LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -217,7 +218,7 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
-am__v_CCLD_1 = 
+am__v_CCLD_1 =
 SOURCES = $(libmodelsmodule_la_SOURCES)
 DIST_SOURCES = $(libmodelsmodule_la_SOURCES)
 am__can_run_installinfo = \
@@ -521,6 +522,7 @@ libmodelsmodule_la_SOURCES = \
 		iaf_psc_exp.h iaf_psc_exp.cpp\
 		iaf_tum_2000.h iaf_tum_2000.cpp\
 		izhikevich.h izhikevich.cpp\
+    simple.h simple.cpp\
 		mat2_psc_exp.h mat2_psc_exp.cpp\
 		mcculloch_pitts_neuron.h mcculloch_pitts_neuron.cpp\
 		mip_generator.h mip_generator.cpp\
@@ -612,7 +614,7 @@ clean-noinstLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
-libmodelsmodule.la: $(libmodelsmodule_la_OBJECTS) $(libmodelsmodule_la_DEPENDENCIES) $(EXTRA_libmodelsmodule_la_DEPENDENCIES) 
+libmodelsmodule.la: $(libmodelsmodule_la_OBJECTS) $(libmodelsmodule_la_DEPENDENCIES) $(EXTRA_libmodelsmodule_la_DEPENDENCIES)
 	$(AM_V_CXXLD)$(libmodelsmodule_la_LINK)  $(libmodelsmodule_la_OBJECTS) $(libmodelsmodule_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
@@ -649,6 +651,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-iaf_psc_exp_multisynapse.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-iaf_tum_2000.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-izhikevich.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-simple.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-mat2_psc_exp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-mcculloch_pitts_neuron.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-mip_generator.Plo@am__quote@
@@ -896,6 +899,14 @@ libmodelsmodule_la-izhikevich.lo: izhikevich.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='izhikevich.cpp' object='libmodelsmodule_la-izhikevich.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -c -o libmodelsmodule_la-izhikevich.lo `test -f 'izhikevich.cpp' || echo '$(srcdir)/'`izhikevich.cpp
+
+libmodelsmodule_la-simple.lo: simple.cpp
+@am__fastdepCXX_TRUE@ $(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -MT libmodelsmodule_la-simple.lo -MD -MP -MF $(DEPDIR)/libmodelsmodule_la-simple.Tpo -c -o libmodelsmodule_la-simple.lo `test -f 'simple.cpp' || echo '$(srcdir)/'`simple.cpp
+@am__fastdepCXX_TRUE@ $(AM_V_at)$(am__mv) $(DEPDIR)/libmodelsmodule_la-simple.Tpo $(DEPDIR)/libmodelsmodule_la-simple.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@  $(AM_V_CXX)source='simple.cpp' object='libmodelsmodule_la-simple.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@  DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@  $(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -c -o libmodelsmodule_la-simple.lo `test -f 'simple.cpp' || echo '$(srcdir)/'`simple.cpp
+
 
 libmodelsmodule_la-mat2_psc_exp.lo: mat2_psc_exp.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -MT libmodelsmodule_la-mat2_psc_exp.lo -MD -MP -MF $(DEPDIR)/libmodelsmodule_la-mat2_psc_exp.Tpo -c -o libmodelsmodule_la-mat2_psc_exp.lo `test -f 'mat2_psc_exp.cpp' || echo '$(srcdir)/'`mat2_psc_exp.cpp

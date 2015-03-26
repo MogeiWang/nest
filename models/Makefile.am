@@ -80,7 +80,8 @@ libmodelsmodule_la_SOURCES= \
 		step_current_generator.h step_current_generator.cpp\
 		tsodyks2_connection.h\
 		tsodyks_connection.h\
-		volume_transmitter.h volume_transmitter.cpp
+		volume_transmitter.h volume_transmitter.cpp\
+		simple.h simple.cpp
 
 
 
