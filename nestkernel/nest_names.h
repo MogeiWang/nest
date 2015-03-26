@@ -271,7 +271,9 @@ namespace nest
     extern const Name synapse;                  //!< Node type
     extern const Name synapse_model;            //!< Connection parameters
     extern const Name synapse_modelid;          //!< Connection parameters
+    extern const Name spikes;
 
+    extern const Name thresh;
     extern const Name t_lag;                    //!< Lag within a time slice
     extern const Name t_origin;                 //!< Origin of a time-slice
     extern const Name t_ref;                    //!< Refractory period

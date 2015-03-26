@@ -259,7 +259,9 @@ namespace nest
     const Name synapse("synapse");
     const Name synapse_model("synapse_model");
     const Name synapse_modelid("synapse_modelid");
+    const Name spikes("spikes");
 
+    const Name thresh("thresh");
     const Name t_lag("t_lag");
     const Name t_origin("t_origin");
     const Name t_ref("t_ref");
