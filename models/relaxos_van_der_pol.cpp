@@ -182,7 +182,6 @@ void nest::relaxos_van_der_pol::update(Time const & origin, const long_t from, c
     }
     S_.y_ += h*(P_.epsilon_*(1 - x_old*x_old)*y_old - x_old);
     S_.x_ += h*(y_old);
-    printf("%f, %f, %f, %f, %f, %f\n", S_.x_, S_.y_, P_.epsilon_, a1, b1, h);
 
     // send a current event to the network
     CurrentEvent ce;
@@ -199,7 +198,6 @@ void nest::relaxos_van_der_pol::update(Time const & origin, const long_t from, c
 
 void nest::relaxos_van_der_pol::handle(SpikeEvent & e)
 {
-  printf("Here1\n");
   assert(e.get_delay() > 0);
   B_.spikes_.add_value(e.get_rel_delivery_steps(network()->get_slice_origin()),
            e.get_weight() * e.get_multiplicity());
@@ -208,7 +206,6 @@ void nest::relaxos_van_der_pol::handle(SpikeEvent & e)
 void nest::relaxos_van_der_pol::handle(CurrentEvent & e)
 {
   assert(e.get_delay() > 0);
-  printf("Here2\n");
 
   const double_t c=e.get_current();
   const double_t w=e.get_weight();
