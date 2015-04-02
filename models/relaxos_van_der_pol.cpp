@@ -185,9 +185,9 @@ void nest::relaxos_van_der_pol::update(Time const & origin, const long_t from, c
     printf("%f, %f, %f, %f, %f, %f\n", S_.x_, S_.y_, P_.epsilon_, a1, b1, h);
 
     // send a current event to the network
-    // CurrentEvent ce;
-    // ce.set_current(S_.y_);
-    // network()->send(*this, ce, lag);
+    CurrentEvent ce;
+    ce.set_current(S_.y_);
+    network()->send(*this, ce, lag);
 
     // set new input current
     S_.I_ = b1 + P_.I_ex_ - P_.I_in_;

@@ -42,7 +42,8 @@ namespace nest {
       relaxos_van_der_pol();
       relaxos_van_der_pol(const relaxos_van_der_pol &);
 
-      // bool has_proxies() const {return false;}
+      bool has_proxies() const {return false;}
+      bool local_receiver() const { return true; }
 
       /**
        * Import sets of overloaded virtual functions.
