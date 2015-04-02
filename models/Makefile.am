@@ -81,7 +81,8 @@ libmodelsmodule_la_SOURCES= \
 		tsodyks2_connection.h\
 		tsodyks_connection.h\
 		volume_transmitter.h volume_transmitter.cpp\
-		simple.h simple.cpp
+		simple.h simple.cpp\
+		relaxos_van_der_pol.h relaxos_van_der_pol.cpp
 
 
 

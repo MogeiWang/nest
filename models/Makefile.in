@@ -131,6 +131,7 @@ am_libmodelsmodule_la_OBJECTS = libmodelsmodule_la-ac_generator.lo \
 	libmodelsmodule_la-iaf_tum_2000.lo \
 	libmodelsmodule_la-izhikevich.lo \
   libmodelsmodule_la-simple.lo \
+  libmodelsmodule_la-relaxos_van_der_pol.lo \
 	libmodelsmodule_la-mat2_psc_exp.lo \
 	libmodelsmodule_la-mcculloch_pitts_neuron.lo \
 	libmodelsmodule_la-mip_generator.lo \
@@ -523,6 +524,7 @@ libmodelsmodule_la_SOURCES = \
 		iaf_tum_2000.h iaf_tum_2000.cpp\
 		izhikevich.h izhikevich.cpp\
     simple.h simple.cpp\
+    relaxos_van_der_pol.h relaxos_van_der_pol.cpp\
 		mat2_psc_exp.h mat2_psc_exp.cpp\
 		mcculloch_pitts_neuron.h mcculloch_pitts_neuron.cpp\
 		mip_generator.h mip_generator.cpp\
@@ -652,6 +654,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-iaf_tum_2000.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-izhikevich.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-simple.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-relaxos_van_der_pol.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-mat2_psc_exp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-mcculloch_pitts_neuron.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libmodelsmodule_la-mip_generator.Plo@am__quote@
@@ -907,6 +910,12 @@ libmodelsmodule_la-simple.lo: simple.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@  DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@  $(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -c -o libmodelsmodule_la-simple.lo `test -f 'simple.cpp' || echo '$(srcdir)/'`simple.cpp
 
+libmodelsmodule_la-relaxos_van_der_pol.lo: relaxos_van_der_pol.cpp
+@am__fastdepCXX_TRUE@ $(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -MT libmodelsmodule_la-relaxos_van_der_pol.lo -MD -MP -MF $(DEPDIR)/libmodelsmodule_la-relaxos_van_der_pol.Tpo -c -o libmodelsmodule_la-relaxos_van_der_pol.lo `test -f 'relaxos_van_der_pol.cpp' || echo '$(srcdir)/'`relaxos_van_der_pol.cpp
+@am__fastdepCXX_TRUE@ $(AM_V_at)$(am__mv) $(DEPDIR)/libmodelsmodule_la-relaxos_van_der_pol.Tpo $(DEPDIR)/libmodelsmodule_la-relaxos_van_der_pol.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@  $(AM_V_CXX)source='relaxos_van_der_pol.cpp' object='libmodelsmodule_la-relaxos_van_der_pol.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@  DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@  $(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -c -o libmodelsmodule_la-relaxos_van_der_pol.lo `test -f 'relaxos_van_der_pol.cpp' || echo '$(srcdir)/'`relaxos_van_der_pol.cpp
 
 libmodelsmodule_la-mat2_psc_exp.lo: mat2_psc_exp.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libmodelsmodule_la_CXXFLAGS) $(CXXFLAGS) -MT libmodelsmodule_la-mat2_psc_exp.lo -MD -MP -MF $(DEPDIR)/libmodelsmodule_la-mat2_psc_exp.Tpo -c -o libmodelsmodule_la-mat2_psc_exp.lo `test -f 'mat2_psc_exp.cpp' || echo '$(srcdir)/'`mat2_psc_exp.cpp
