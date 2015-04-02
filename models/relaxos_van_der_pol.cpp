@@ -180,8 +180,13 @@ void nest::relaxos_van_der_pol::update(Time const & origin, const long_t from, c
       printf("The system went chaotic and exploded, exiting...\n");
       _exit(0);
     }
-    S_.y_ += h*(P_.epsilon_*(1 - x_old*x_old)*y_old - x_old);
-    S_.x_ += h*(y_old);
+
+    // Alternate form of the equation
+    // S_.y_ += h*(P_.epsilon_*(1 - x_old*x_old)*y_old - x_old);
+    // S_.x_ += h*(y_old);
+
+    S_.x_ += h*P_.epsilon_*(x_old - (1.0/3.0)*(pow(x_old, 3)) - y_old);
+    S_.y_ += h*x_old/P_.epsilon_;
 
     // send a current event to the network
     CurrentEvent ce;
